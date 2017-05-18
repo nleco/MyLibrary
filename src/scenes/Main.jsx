@@ -7,7 +7,7 @@ import './Main.scss';
 export default class Main extends Component {
     render () {
         return (
-            <p>Main</p>
+            <p>Main hi</p>
         )
     }
 }

@@ -1,7 +1,8 @@
 {
   "name": "MyLibrary",
   "version": "1.0.0",
-  "private": true,
+
+  "main" : "index.jsx",
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -28,6 +29,6 @@
   },
   "scripts": {
     "build": "webpack -d --progress --colors",
-    "start": "webpack-dev-server --progress --colors"
+    "start": "webpack-dev-server --progress --colors --history-api-fallback"
   }
 }

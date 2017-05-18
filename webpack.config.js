@@ -6,19 +6,18 @@ var APP_DIR = path.resolve(__dirname, 'src');
 
 var config = {
   entry: [
+      'webpack-dev-server/client?http://localhost:8080/',
       APP_DIR + '/index.jsx'
   ],
   output: {
       path: BUILD_DIR,
-      publicPath : '/',
-      filename: 'bundle.js'
+      filename: 'bundle.js',
+      publicPath : '/'
   },
   devServer : {
       historyApiFallback: true,
       hot: true,
-      inline: true,
-      contentBase: '/',
-      open: true
+      contentBase: 'src/public/'
   },
   devtool: "cheap-eval-source-map",
   module: {
@@ -41,6 +40,8 @@ var config = {
       ]
   },
   plugins: [
+      new webpack.optimize.OccurrenceOrderPlugin(),
+      new webpack.HotModuleReplacementPlugin(),
       new webpack.NoEmitOnErrorsPlugin()
   ],
   resolve: {
