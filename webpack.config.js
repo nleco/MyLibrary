@@ -6,18 +6,34 @@ var APP_DIR = path.resolve(__dirname, 'src');
 
 var config = {
   entry: [
+      'webpack/hot/dev-server',
       'webpack-dev-server/client?http://localhost:8080/',
       APP_DIR + '/index.jsx'
   ],
   output: {
       path: BUILD_DIR,
       filename: 'bundle.js',
-      publicPath : '/'
+      publicPath : '/assets/'
   },
   devServer : {
       historyApiFallback: true,
-      hot: true,
-      contentBase: 'src/public/'
+      contentBase: 'src/public/',
+      proxy: { 
+          '/**': {  //catch all requests
+            target: '/index.html',  //default target
+            secure: false,
+            bypass: function(req, res, opt){
+              //your custom code to check for any exceptions
+              if(req.path.indexOf('/img/') !== -1 || req.path.indexOf('/assets/') !== -1){
+                return '/'
+              }
+
+              if (req.headers.accept.indexOf('html') !== -1) {
+                return '/index.html';
+              }
+            }
+          }
+        }
   },
   devtool: "cheap-eval-source-map",
   module: {
