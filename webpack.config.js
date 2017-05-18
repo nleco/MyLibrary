@@ -13,27 +13,11 @@ var config = {
   output: {
       path: BUILD_DIR,
       filename: 'bundle.js',
-      publicPath : '/assets/'
+      publicPath : '/'
   },
   devServer : {
       historyApiFallback: true,
-      contentBase: 'src/public/',
-      proxy: { 
-          '/**': {  //catch all requests
-            target: '/index.html',  //default target
-            secure: false,
-            bypass: function(req, res, opt){
-              //your custom code to check for any exceptions
-              if(req.path.indexOf('/img/') !== -1 || req.path.indexOf('/assets/') !== -1){
-                return '/'
-              }
-
-              if (req.headers.accept.indexOf('html') !== -1) {
-                return '/index.html';
-              }
-            }
-          }
-        }
+      contentBase: 'src/public/'
   },
   devtool: "cheap-eval-source-map",
   module: {
