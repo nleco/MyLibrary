@@ -19,7 +19,6 @@ var config = {
       historyApiFallback: true,
       contentBase: 'src/public/'
   },
-  devtool: "cheap-eval-source-map",
   module: {
       loaders : [            
           {
@@ -30,12 +29,10 @@ var config = {
           {
               test: /\.s?css$/,
               loaders: ["style-loader", "css-loader", "sass-loader"],
-              exclude: /node_modules/
           },
           {
-              test: /\.(eot|svg|ttf|woff|woff2)(\?v=[.0-9]+)?$/,
-              loader: 'file-loader?name=fonts/[name].[ext]',
-              exclude: /node_modules/
+              test: /\.(eot|svg|ttf|woff|woff2)(\??\#?v=[.0-9]+)?$/,
+              loader: 'file-loader?name=/fonts/[name].[ext]',
           }
       ]
   },

@@ -1,36 +1,20 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 
 import './App.scss';
-
-/**
-
-use links:
-import { Link } from 'react-router';
-<Link to="/some/where">Click me</Link>
-
-update browser url:
-this.props.dispatch(push('/some/path'));
-
- */
+import Header from './components/Header'
 
 export default class App extends Component {
     render() {
         return (
             <div className="app">
-                <header className="app__header">
-                    <p>Header</p>
-                    <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/view">View</Link></li>
-                        <li><Link to="/add">Add</Link></li>
-                    </ul>
-                </header>
-                <main className="App-Main">
+                <Header/>
+                <main className="app__main">
                     {this.props.children}
                 </main>
                 <footer className="app__footer">
-                    <p>footer</p>
+                    <p>SampleCompany 2017</p>
                 </footer>
             </div>
         );
