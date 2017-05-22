@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import App from './App';
-
 import Main from './scenes/Main';
 import View from './scenes/View';
 import Add from './scenes/Add';
 
 
 export default class Routes extends Component {
+    constructor(props) {
+        super(props);
+    }
+    
+    
     render () {
         return (
             <Switch>

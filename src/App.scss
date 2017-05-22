@@ -2,6 +2,8 @@
 @import "~normalize.css/normalize.css";
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
+$body-color: #697283;
+$header-color: #3a3f49;
 
 * {
   -webkit-box-sizing: content-box;
@@ -11,6 +13,7 @@
 html,
 body {
   font-family: 'Raleway', sans-serif;
+  color: $body-color;
 }
 
 
@@ -24,17 +27,10 @@ body {
 .app__main {
   &__header {
     font-size: 1.5rem;
+    color: $header-color;
   }
   
   &__subheader {
     font-size: 1rem;
   }
-}
-
-
-/* footer */
-.app__footer {
-  text-align: center;
-  font-size: 10px;
-  color: #777;
 }

@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+import { libraryApp } from './reducers';
+import Header from './Header';
+import FooterView from './FooterView'
 
 import './App.scss';
-import Header from './components/Header'
 
-export default class App extends Component {
+let store = createStore(libraryApp);
+
+export default class App extends Component
+    
     render() {
         return (
-            <div className="app">
-                <Header/>
-                <main className="app__main">
-                    {this.props.children}
-                </main>
-                <footer className="app__footer">
-                    <p>SampleCompany 2017</p>
-                </footer>
-            </div>
+            <Provider store={store}>
+                <div className="app">
+                    <Header/>
+                    <main className="app__main">
+                        {this.props.children}
+                    </main>
+                    <FooterView/>
+                </div>
+            </Provider>
         );
     }
 }
