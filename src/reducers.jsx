@@ -4,7 +4,14 @@ import { combineReducers } from 'redux';
 // Page
 const page = (state={}, action) => {
     
-    
+    switch (action.type) {
+        case 'UPDATE_PAGE':
+            return {
+                page: action.page
+            }
+        case default:
+            return state;
+    }
     return state;
 };
 
@@ -31,4 +38,4 @@ const libraryApp = combineReducers({
     books
 })
 
-export default libraryApp;
+export default library;
