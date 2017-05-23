@@ -1,39 +1,43 @@
 import { combineReducers } from 'redux';
 
+//todo: I should be using Constants here for the types
 
-// Page
-const page = (state={}, action) => {
+const page = (state = 'HOME', action) => {
     
     switch (action.type) {
         case 'UPDATE_PAGE':
-            return {
-                page: action.page
-            }
-        case default:
+            return action.page;
+        
+        default:
             return state;
     }
     return state;
 };
 
-// Books
-const books = () = (state = [], action) {
+
+
+const books = (state = [], action) => {
     switch (action) {
-        case ADD_BOOK:
+        case 'ADD_BOOK':
             return [
                 ...state,
-                
-                
+                {
+                    id : action.id,
+                    title: action.title,
+                    author: action.author,
+                    description: action.description
+                }
             ];
-        case REMOVE_BOOK:
-            return [];
+        
+        case 'REMOVE_BOOK':
+            return state.filter((b) => b.id != action.id);
+            
         default:
             return state;
     }
-}
+};
 
-
-
-const libraryApp = combineReducers({
+const library = combineReducers({
     page,
     books
 })

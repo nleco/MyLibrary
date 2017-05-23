@@ -24,3 +24,6 @@ I attempted to try and seperate UI and Container components.
 * UI : simply does UI work without a need to know about what is being stored where. It takes data and renders it.
 * Containers : Here is where we interact with the store and where we would probably store things to a persistent storage
 
+
+### Data Typechecking
+I may not have time to add some Typechecking useing the propTypes.

@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
 import './ViewView.scss';
 
-export default class View extends Component {
-    render () {
-        return (
-            <p>View</p>
-        )
-    }
-}
+const ViewView = () => (
+    <div className="view-book">
+        <h1 className="app__main__header">My Books</h1>
+        <p>View A BOOK</p>
+    </div>
+);
+
+export default ViewView;

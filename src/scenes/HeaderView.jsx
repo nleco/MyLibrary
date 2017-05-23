@@ -1,32 +1,16 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
-import './Header.scss';
+import './HeaderView.scss';
 
-export default class HeaderView extends Component {
-    constructor(props) {
-        super(props);
-        
-        this.state = {
-            page : PAGE_HOME
-        };
-        
-        this.handleChangePage = this.handleChangePage.bind(this); 
-    }
-        
-    handleChangePage(page) {
-        
-    }
+
+const HeaderView = ({page, handleChangePage}) => (
+    <header className="app__header">
+        <h1 className="app__header__title">Awesome Library</h1>
     
-    //TODO: set up propagation?
-    render () {
-        return (
-            <header className="app__header">
-                <h1 className="app__header__title">Awesome Library</h1>
-            
-                <Link to="/" className={'app__header__button' + (this.state.page === PAGE_HOME ? ' mod-current' : '')} onClick={() => this.handleChangePage('HOME')}>Home</Link>
-                <Link to="/add" className={'app__header__button' + (this.state.page === PAGE_ADD ? ' mod-current' : '')} onClick={() => this.handleChangePage('ADD')}>Add</Link>
-            </header>  
-        );
-    }
-}
+        <Link to="/" className={'app__header__button' + (page === 'HOME' ? ' mod-current' : '')} onClick={(e) => {e.preventDefault(); handleChangePage('HOME')}}>Home</Link>
+        <Link to="/add" className={'app__header__button' + (page === 'ADD' ? ' mod-current' : '')} onClick={(e) => {e.preventDefault(); handleChangePage('ADD')}}>Add</Link>
+    </header> 
+);
+
+export default HeaderView;

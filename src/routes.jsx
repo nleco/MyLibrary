@@ -1,24 +1,14 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Main from './scenes/Main';
-import View from './scenes/View';
-import Add from './scenes/Add';
+import Home from './containers/Home';
+// import View from './components/View';
 
+const Routes = () => (
+    <Switch>
+        <Route exact path="/" component={Home}/>
+        {/*<Route path="/view" component={View}/>*/}
+    </Switch>
+);
 
-export default class Routes extends Component {
-    constructor(props) {
-        super(props);
-    }
-    
-    
-    render () {
-        return (
-            <Switch>
-                <Route exact path="/" component={Main}/>
-                <Route path="/view" component={View}/>
-                <Route path="/add" component={Add}/>
-            </Switch>
-        );
-    }
-}
+export default Routes;

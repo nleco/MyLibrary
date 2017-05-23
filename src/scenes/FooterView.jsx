@@ -1,18 +1,11 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 
-import './Footer.scss';
+import './FooterView.scss';
 
-export default class Header extends Component {
-    constructor(props) {
-        super(props);
-    }
-        
-    render () {
-        return (
-            <footer className="app__footer">
-                <p>SampleCompany 2017</p>
-            </footer>
-        );
-    }
-}
+const FooterView = () => (
+    <footer className="app__footer">
+        <p>SampleCompany {(new Date).getFullYear()}</p>
+    </footer>
+);
 
+export default FooterView;
