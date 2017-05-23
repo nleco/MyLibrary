@@ -1,0 +1,17 @@
+.link {
+  color: $link-color;
+  text-decoration: none;
+  
+  &.mod-header-nav {
+    color: #8d93af;
+    font-size: .8rem;
+  }
+  
+  &.mod-header-nav.mod-current {
+    color: #fff;
+  }
+  
+  &.mod-header-nav:hover {
+    color: #fff;
+  }
+}

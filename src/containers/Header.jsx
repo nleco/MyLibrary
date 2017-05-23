@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import { withRouter } from 'react-router-dom';
 import HeaderView from '../scenes/HeaderView';
 import { updatePage } from '../actions';
 
@@ -23,4 +23,4 @@ const Header = connect(
     mapDispatchToProps
 )(HeaderView);
 
-export default Header;
+export default withRouter(Header);

@@ -14,8 +14,6 @@ const page = (state = 'HOME', action) => {
     return state;
 };
 
-
-
 const books = (state = [], action) => {
     switch (action) {
         case 'ADD_BOOK':

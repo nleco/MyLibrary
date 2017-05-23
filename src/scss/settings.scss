@@ -4,3 +4,11 @@ $mdi-font-path: "/fonts";
 // Colors
 $body-color: #697283;
 $header-color: #3a3f49;
+
+// Buttons
+$button-background-color: #7d5dfb;
+$button-background-color-hover: lighten($button-background-color, 5%);
+$button-background-color-current: darken($button-background-color, 20%);
+
+// Links
+$link-color: #7d5dfb;

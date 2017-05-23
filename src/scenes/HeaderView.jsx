@@ -1,13 +1,34 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-const HeaderView = ({page, handleChangePage}) => (
-    <header className="app__header">
-        <h1 className="app__header__title">Awesome Library</h1>
+export default class HeaderView extends Component {
+    constructor(props) {
+        super(props);
+        
+        this.state = {
+            page : props.location.pathname === '/add' ? 'ADD' : props.page
+        };
+        
+        this.handleClick.bind(this);
+    }
     
-        <Link to="/" className={'app__header__button' + (page === 'HOME' ? ' mod-current' : '')} onClick={() => {handleChangePage('HOME')}}>Home</Link>
-        <Link to="/add" className={'app__header__button' + (page === 'ADD' ? ' mod-current' : '')} onClick={() => {handleChangePage('ADD')}}>Add</Link>
-    </header> 
-);
+    handleClick(page, handleChangePage) {
+        this.setState({
+            page : page
+        });
+        
+        handleChangePage(page);
+    }
+    
+    render () {
+        return (
+            <header className="app__header">
+                <h1 className="app__header__title">Awesome Library</h1>
+    
+                <Link to="/" className={'link mod-header-nav u-mr-20' + (this.state.page === 'HOME' ? ' mod-current' : '')} onClick={() => {this.handleClick('HOME', this.props.handleChangePage)}}>Home</Link>
+                <Link to="/add" className={'link mod-header-nav' + (this.state.page === 'ADD' ? ' mod-current' : '')} onClick={() => {this.handleClick('ADD', this.props.handleChangePage)}}>Add</Link>
+            </header> 
+        )
+    }
+}
 
-export default HeaderView;
