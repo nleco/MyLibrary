@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Home from './containers/Home';
-// import View from './components/View';
+import Add from './containers/Add';
 
 const Routes = () => (
     <Switch>
         <Route exact path="/" component={Home}/>
-        {/*<Route path="/view" component={View}/>*/}
+        <Route path="/add" component={Add}/>
     </Switch>
 );
 

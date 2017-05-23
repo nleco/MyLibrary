@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { updatePage } from '../actions';
+import { updatePage, removeBook } from '../actions';
 
-import HomeView from '../scenes/HomeView'
+import HomeView from '../scenes/HomeView';
 
 const mapStateToProps = (state) => {
     return {
@@ -9,10 +9,13 @@ const mapStateToProps = (state) => {
     }
 };
 
-const mapDispatchToProps = (state) => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        onRemoveBookClick : (id) => {
+        handleRemoveBook : (id) => {
             dispatch(removeBook(id));
+        },
+        handleChangePage: (page) => {
+            dispatch(updatePage(page));
         }
     }
 };

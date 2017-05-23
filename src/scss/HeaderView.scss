@@ -1,0 +1,28 @@
+.app__header {
+  width: 100%;
+  padding: 20px;
+  background-color: #2e303b;
+  
+  &__title {
+    font-size: 1em;
+    line-height: 1.5em;
+    color: #fff;
+    display: inline-block;
+    margin: 0 20px 0 0;
+  }
+
+  .button {
+    
+    margin-right: 10px;
+    
+    &.mod-current,
+    &.mod-current:hover {
+      background-color: $button-background-color-current;
+    }
+    
+    &:last-child {
+      margin-right: 0;
+    };
+
+  }
+}

@@ -1,0 +1,31 @@
+$button-background-color: #7d5dfb;
+$button-background-color-hover: lighten($button-background-color, 5%);
+$button-background-color-current: darken($button-background-color, 20%);
+
+.button {
+  display: inline-block;
+  line-height: 30px;
+  height: 30px;
+  padding: 0 10px;
+  text-decoration: none;
+  background-color: $button-background-color;
+  
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 100;
+  
+  min-width: 70px;
+  text-align: center;
+
+  
+  &:hover {
+    transition: background-color 500ms;
+    background-color: $button-background-color-hover;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+    left: 1px;
+  }
+}

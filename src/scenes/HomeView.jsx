@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 
-import './HomeView.scss';
+const renderBooks = (books) => (
+    <ul className="books__list">
+        <li>one book</li>
+        <li>two book</li>
+    </ul>
+);
 
-const MainView = () => (
+const MainView = ({ books, handleChangePage, handleRemoveBook }) => (
     <div className="books">
         <h1 className="app__main__header">My Books</h1>
-        <p className="app__main__subheader">Here you can see all of your books. Try it out!</p>
-        <ul className="books__list">
-            <li>one book</li>
-            <li>two book</li>
-        </ul>
+        <p className="app__main__subheader">{books.length ? "Check out your books!" : 'You have no books. :('}</p>
+        
+        {books.length > 0 ? renderBooks(books) : (<p><Link to='/add' onClick={()=>{handleChangePage('ADD')}}>Add a book!</Link></p>)}            
     </div>
 );
 

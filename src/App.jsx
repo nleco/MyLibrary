@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Header from './containers/Header';
 import FooterView from './scenes/FooterView';
 
-import './App.scss';
+import './scss/App.scss';
 
 export default class App extends Component {
     render() {

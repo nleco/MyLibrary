@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import FormAdd from '../components/FormAdd';
 
-import './AddView.scss';
-
-const AddView = () => (
+const AddView = ({onAddBookSubmit}) => (
     <div className="add-book">
-        <h1 className="app__main__header">My Books</h1>
-        <p className="app__main__subheader">Here you can see all of your books. Try it out!</p>
-        <p>ADD A BOOK</p>
+        <h1 className="app__main__header">Add a Book</h1>
+        <p className="app__main__subheader">Just bought a new book? let&apos;s add it now!</p>
+    
+        <div className="u-mt-20">
+            <FormAdd onFormSubmit={onAddBookSubmit}/>
+        </div>
     </div>
 )
+
+export default AddView;
