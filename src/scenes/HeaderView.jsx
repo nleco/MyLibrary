@@ -23,7 +23,10 @@ export default class HeaderView extends Component {
     render () {
         return (
             <header className="app__header">
-                <h1 className="app__header__title">Awesome Library</h1>
+                <h1 className="app__header__title">
+                    <i className="mdi mdi-library app__header__title__icon"></i> 
+                    <span className="app__header__title__text">Awesome Library</span>
+                </h1>
     
                 <Link to="/" className={'link mod-header-nav u-mr-20' + (this.state.page === 'HOME' ? ' mod-current' : '')} onClick={() => {this.handleClick('HOME', this.props.handleChangePage)}}>Home</Link>
                 <Link to="/add" className={'link mod-header-nav' + (this.state.page === 'ADD' ? ' mod-current' : '')} onClick={() => {this.handleClick('ADD', this.props.handleChangePage)}}>Add</Link>

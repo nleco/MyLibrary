@@ -4,25 +4,31 @@
   background-color: #2e303b;
   
   &__title {
-    font-size: 1em;
-    line-height: 1.5em;
+    font-size: 1.5em;
+    line-height: 1em;
     color: #fff;
     display: inline-block;
-    margin: 0 20px 0 0;
-  }
-
-  .button {
+    margin: 0 40px 0 0;
     
-    margin-right: 10px;
-    
-    &.mod-current,
-    &.mod-current:hover {
-      background-color: $button-background-color-current;
+    &__icon {
+      color: $nav-main-icon;
+      margin-right: 10px;
+      font-size: 1.5rem;
     }
-    
-    &:last-child {
-      margin-right: 0;
-    };
+  }
+}
 
+.link {  
+  &.mod-header-nav {
+    color: #8d93af;
+    font-size: .8rem;
+    
+    &.mod-current {
+      color: #fff;
+    }
+  
+    &:hover {
+      color: #fff;
+    }
   }
 }

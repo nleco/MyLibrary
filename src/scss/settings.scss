@@ -1,5 +1,5 @@
 // Material Design Icons
-$mdi-font-path: "/fonts";
+$mdi-font-path: "~mdi/fonts/";
 
 // Colors
 $body-color: #697283;
@@ -12,3 +12,7 @@ $button-background-color-current: darken($button-background-color, 20%);
 
 // Links
 $link-color: #7d5dfb;
+
+
+// Header
+$nav-main-icon: #7d5dfb;

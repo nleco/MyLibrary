@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import "./settings.scss";
 
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import "~mdi/scss/materialdesignicons.scss";
 @import "~normalize.css/normalize.css";
 
-@import "./settings.scss";
 @import "./buttons.scss";
 @import "./forms.scss";
 @import "./links.scss";

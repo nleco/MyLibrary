@@ -5,7 +5,7 @@ import AddView from '../scenes/AddView';
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onAddBookSubmit : (book) => {
+        addBook : (book) => {
             dispatch(addBook(book));
         }
     }

@@ -6,6 +6,7 @@ import Header from './containers/Header';
 import FooterView from './scenes/FooterView';
 
 import './scss/App.scss';
+
 import { updatePage } from './actions'
 
 import Home from './containers/Home';

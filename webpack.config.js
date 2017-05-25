@@ -31,8 +31,8 @@ var config = {
               loaders: ["style-loader", "css-loader", "sass-loader"],
           },
           {
-              test: /\.(eot|svg|ttf|woff|woff2)(\??\#?v=[.0-9]+)?$/,
-              loader: 'file-loader?name=/fonts/[name].[ext]',
+              test: /\.(eot|woff|woff2|ttf|svg|png|jpg)(\?v=\d+.\d+.\d+)?$/,
+              loader: 'file-loader?name=fonts/[name].[ext]',
           }
       ]
   },
@@ -46,7 +46,6 @@ var config = {
   }
 };
 
-//dev server
-
+//  /\.(eot|svg|ttf|woff|woff2)$/  (\??\#?v=[.0-9]+)?
 
 module.exports = config;

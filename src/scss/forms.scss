@@ -1,12 +1,52 @@
+.fieldset {
+  border: none;
+}
+
 .label {
   font-weight: bold;
   color: #222;
 }
 
-.input:text {
-  border: 1px solid blue;
+.input[type=text] {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  line-height: 1.5rem;
+  padding: 0 10px;
+  font-size: .8rem;
 }
 
-.button.mod-form-submit {
-  background-color: red;
+.textarea {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 10px;
+  font-size: .8rem;
+}
+
+
+// FormAdd changes
+.input.mod-form-add,
+.textarea.mod-form-add  {
+  min-width: 300px;
+}
+
+.textarea.mod-form-add {
+  height: 100px;
+}
+
+.label {
+  &.mod-form-add {
+    display: inline-block;
+    width: 100px;
+    vertical-align: top;
+  }
+}
+
+
+// FormAdd Component
+.form {
+  &.mod-form-add {
+    padding: 20px;
+    border-radius: 2px;
+    background-color: #fefefe;
+  }
 }
