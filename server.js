@@ -1,4 +1,9 @@
 "use strict";
+
+//*********************************
+// NOTE: this is not used. was experimenting.
+//*********************************
+
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config = require('./webpack.config.js');
