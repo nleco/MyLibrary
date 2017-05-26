@@ -1,0 +1,16 @@
+.alert-box {
+  border-radius: 2px;
+  background-color: #dff0d8;
+  color: #222;
+  padding: 20px 35px;
+  position: relative;
+  
+  &__icon {
+    position: absolute;
+    left: 13px;
+  }
+  
+  &.mod-error {
+    background-color: lighten(red, 40%);
+  }
+}

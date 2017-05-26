@@ -1,10 +1,3 @@
-// PAGE --------------------------
-export function updatePage(page) {
-    return {
-        type: 'UPDATE_PAGE',
-        page: page
-    }
-}
 
 // BOOKS -------------------------
 

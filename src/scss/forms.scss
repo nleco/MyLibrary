@@ -13,6 +13,10 @@
   line-height: 1.5rem;
   padding: 0 10px;
   font-size: .8rem;
+  
+  &.mod-error {
+    border: 1px solid darken(red, 20%);
+  }
 }
 
 .textarea {
@@ -20,6 +24,10 @@
   border-radius: 2px;
   padding: 10px;
   font-size: .8rem;
+  
+  &.mod-error {
+    border: 1px solid darken(red, 10%);
+  }
 }
 
 
@@ -39,6 +47,10 @@
     width: 100px;
     vertical-align: top;
   }
+}
+
+.button[disabled] {
+  opacity : .5;
 }
 
 

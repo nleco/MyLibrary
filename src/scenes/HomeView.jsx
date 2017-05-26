@@ -1,16 +1,31 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-const renderBooks = (books) => (
-    <ul className="books__list">
-        <li>one book</li>
-        <li>two book</li>
-    </ul>
+const renderBooks = (books, handleRemoveBook) => (
+    <table className="table">
+        <tbody>
+            <tr className="table__row">
+                <th className="table__row__header">Title</th>
+                <th className="table__row__header">Author</th>
+                <th className="table__row__header" colSpan="2">Description</th>
+            </tr>
+            {books.map((book) => (
+                <tr className="table__row" key={book.id}>
+                    <td className="table__row__cell">{book.title}</td>
+                    <td className="table__row__cell">{book.author}</td>
+                    <td className="table__row__cell">{book.description}</td>
+                    <td className="table__row__cell">
+                        <span className="link" title="delete" onClick={() => {handleRemoveBook(book.id)}}><i className="mdi mdi-delete"></i></span>
+                    </td>
+                </tr>
+            ))}
+        </tbody>
+    </table>
 );
 
 const renderAddBook = (handleChangePage) => (
     <p>
-        <Link to='/add' className="link" onClick={()=>{handleChangePage('ADD')}}>
+        <Link to='/add' className="link">
             <i className="mdi mdi-book"></i> Add a book!
         </Link>
     </p>
@@ -31,7 +46,7 @@ const MainView = ({ books, handleChangePage, handleRemoveBook }) => (
             {books.length ? renderHaveBooks() : renderDontHaveBooks()}
         </p>
         
-        {books.length > 0 ? renderBooks(books) : renderAddBook(handleChangePage)}            
+        {books.length > 0 ? renderBooks(books, handleRemoveBook) : renderAddBook(handleChangePage)}            
     </div>
 );
 

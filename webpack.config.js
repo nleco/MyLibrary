@@ -6,8 +6,6 @@ var APP_DIR = path.resolve(__dirname, 'src');
 
 var config = {
   entry: [
-      'webpack/hot/dev-server',
-      'webpack-dev-server/client?http://localhost:8080/',
       APP_DIR + '/index.jsx'
   ],
   output: {
@@ -16,23 +14,38 @@ var config = {
       publicPath : '/'
   },
   devServer : {
-      historyApiFallback: true,
-      contentBase: 'src/public/'
+      inline: true,
+      hot: true,
+      contentBase: './src/public/'
   },
   module: {
-      loaders : [            
+      rules : [            
           {
               test : /\.jsx?/,
-              include : APP_DIR,
-              loader : ['react-hot-loader', 'babel-loader']
+              exclude: /node_modules/,
+              use : [
+                  'react-hot-loader', 
+                  'babel-loader'
+              ]
           },
           {
               test: /\.s?css$/,
-              loaders: ["style-loader", "css-loader", "sass-loader"],
+              use : [
+                  "style-loader",
+                  "css-loader",
+                  "sass-loader"
+              ]
           },
           {
               test: /\.(eot|woff|woff2|ttf|svg|png|jpg)(\?v=\d+.\d+.\d+)?$/,
-              loader: 'file-loader?name=fonts/[name].[ext]',
+              use : [
+                  {
+                      loader : 'file-loader',
+                      options : {
+                          name : 'fonts/[name].[ext]'
+                      }
+                  }
+              ]
           }
       ]
   },
@@ -45,7 +58,5 @@ var config = {
       extensions: ['.js', '.jsx']
   }
 };
-
-//  /\.(eot|svg|ttf|woff|woff2)$/  (\??\#?v=[.0-9]+)?
 
 module.exports = config;

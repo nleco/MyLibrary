@@ -1,9 +1,11 @@
 @import "./settings.scss";
 
-@import url('https://fonts.googleapis.com/css?family=Raleway');
-@import "~mdi/scss/materialdesignicons.scss";
 @import "~normalize.css/normalize.css";
 
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import "~mdi/scss/materialdesignicons.scss";
+
+@import "./alerts.scss";
 @import "./buttons.scss";
 @import "./forms.scss";
 @import "./links.scss";

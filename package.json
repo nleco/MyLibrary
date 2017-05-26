@@ -1,8 +1,8 @@
 {
   "name": "MyLibrary",
   "version": "1.0.0",
-  "repository": "",
-  "license": "",
+  "repository": "none",
+  "license": "none",
   "main": "index.jsx",
   "dependencies": {
     "lodash": "^4.17.4",
@@ -26,7 +26,7 @@
     "node-sass": "^4.5.0",
     "normalize.css": "^5.0.0",
     "proxy-middleware": "",
-    "react-scripts": "0.9.5",
+    "react-scripts": "^0.9.5",
     "resolve-url-loader": "^2.0.2",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
@@ -35,6 +35,7 @@
   },
   "scripts": {
     "build": "webpack -d --progress",
-    "start": "webpack-dev-server --progress"
+    "start": "webpack-dev-server --progress",
+    "dev": "node server.js"
   }
 }

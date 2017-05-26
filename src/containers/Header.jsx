@@ -4,12 +4,6 @@ import { withRouter } from 'react-router-dom';
 import HeaderView from '../scenes/HeaderView';
 import { updatePage } from '../actions';
 
-const mapStateToProps = (state) => {
-    return {
-        page: state.page
-    }
-}
-
 const mapDispatchToProps = (dispatch) => {
     return {
         handleChangePage: (page) => {
@@ -19,7 +13,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const Header = connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps
 )(HeaderView);
 
