@@ -35,7 +35,6 @@
   },
   "scripts": {
     "build": "webpack -d --progress",
-    "start": "webpack-dev-server --progress",
-    "dev": "node server.js"
+    "start": "webpack-dev-server --progress"
   }
 }

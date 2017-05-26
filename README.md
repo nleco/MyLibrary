@@ -10,6 +10,11 @@ This is a simple library app that will let you add and remove books. It uses
 * lodash (not always)
 * sass
 
+## Run
+You can run this by running:
+    npm run build // build the project
+    npm run start // run the webpack-dev-server
+
 ## Notes
 This is not a full featured app. It's just meant to show my initial workings with these tools that I have not worked with in a professional environment.
 
