@@ -11,9 +11,9 @@ This is a simple library app that will let you add and remove books. It uses
 * sass
 
 ## Run
-You can run this by running:
-`npm run build // build the project`
-`npm run start // run the webpack-dev-server`
+You can run this by running:  
+`npm run build // build the project`  
+`npm run start // run the webpack-dev-server`  
 
 
 ## Development
